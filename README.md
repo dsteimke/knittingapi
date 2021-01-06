@@ -1,6 +1,6 @@
 # Knitting Pattern API
 
-##What is this thing?
+## What is this thing?
 When I first started knitting, I desperately wanted to make a pair of basic mittens. Sounds
 easy right? When I searched for a pattern I liked each one I found had some sort of 
 detail that intimidated me - colorwork, cables, or a stitch pattern I didn't want to keep
@@ -28,7 +28,7 @@ Enter the knitting API. Calculations for the most basic form of garments, in
 fully customizeable sizing. The patterns require a swatch and some basic measurements
 and do all the knitting math for you so you can just cast on and go.
 
-##Knitting terminology
+## Knitting terminology
 If you're unfamilir with knitting there are some definitions that may help.
 
 Swatch: A sample that is knit before the real knitting starts. The knitter will make a note
@@ -52,22 +52,20 @@ evenly.
 In the round: This describes a style of knitting where the knitter makes a continuous tube of knitting
 rather than knitting back and fourth (like a typewriter) producing a flat piece.
 
+## Endpoints
 
-
-##Endpoints
-
-###/knitting/sock/v1
+### /knitting/sock/v1
 This pattern is a basic cuff down sock pattern. Enter the foot length and circumference of the sock recipient. The
 sock cuff (portion above the heel) is the same length as the foot length, minus the heel. 
 
-####The Math
+#### The Math
 Sock math is straightforward - you need your stitches per inch and you knit until it fits your foot. The cuff of the 
 sock (above the heel) is largely determined by personal preference, and I like my socks to be able to be folded in half
 perfectly at the heel. Yarn is also less elastic than commercial socks so the extra fabric around the ankle helps keep
 the sock from sliding down. The sock is the knit until it's 2" less than the desired final length, then the toe is
 knit. 
 
-####Example Request Body
+#### Example Request Body
 {
 	"swatch": {
 		"stitchesPerInch": 6,
@@ -80,17 +78,17 @@ knit.
     "ribRepeat": "1x1"
 }
 
-###/knitting/gloves/v1
+### /knitting/gloves/v1
 This pattern is coming soon!
 
-###/knitting/hat/v1
+### /knitting/hat/v1
 This pattern is a basic hat with ribbing at the bottom.
 
-####The Math
+#### The Math
 Hats are simple, needing only one measurement - the circumference of your head. That multiplied by the stitches per inch
 is the 
 
-####Example Request Body
+#### Example Request Body
 {
 	"swatch": {
 		"stitchesPerInch": 8,
@@ -102,10 +100,10 @@ is the
     "ribRepeat": "2x2"
 }
 
-###/knitting/sweater/v1
+### /knitting/sweater/v1
 A top down raglan sweater knit seamlessly.
 
-####Example Request Body
+#### Example Request Body
 {
 	"swatch": {
 		"stitchesPerInch": 8,
@@ -122,10 +120,10 @@ A top down raglan sweater knit seamlessly.
     "ribRepeat": "2x2"
 }
 
-###/knitting/mittens/v1
+### /knitting/mittens/v1
 A single mitten (repeat instructions for a pair) knit from the cuff up.
 
-####Example Request Body
+#### Example Request Body
 {
 	"swatch": {
 		"stitchesPerInch": 8,
