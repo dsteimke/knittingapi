@@ -1,0 +1,96 @@
+{
+  "id": "getSweaterPattern",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "swatch": {
+          "type": "object",
+          "properties": {
+            "stitchesPerInch": {
+              "type": "number"
+            },
+            "rowsPerInch": {
+              "type": "number"
+            }
+          }
+        },
+        "measurements": {
+          "type": "object",
+          "properties": {
+            "neck": {
+              "type": "number"
+            },
+            "torso": {
+              "type": "number"
+            },
+            "heightFromUnderarms": {
+              "type": "number"
+            },
+            "armLength": {
+              "type": "number"
+            },
+            "armCircumference": {
+              "type": "number"
+            },
+            "wrist": {
+              "type": "number"
+            }
+          }
+        },
+        "ribRepeat": {
+          "type": "string",
+          "enum": [
+            "1x1",
+            "2x2"
+          ]
+        }
+      }
+    },
+    "response": {
+      "200": {
+        "type": "object",
+        "properties": {
+          "neck": {
+            "type": "string"
+          },
+          "placeMarkers": {
+            "type": "string"
+          },
+          "neckRaise": {
+            "type": "string"
+          },
+          "shoulders": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "sleeves": {
+            "type": "string"
+          }
+        }
+      },
+      "400": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer"
+          },
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "statusCode",
+          "error",
+          "message"
+        ]
+      }
+    }
+  }
+}

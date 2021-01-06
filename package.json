@@ -1,0 +1,25 @@
+{
+  "name": "knittingapi",
+  "version": "1.0.0",
+  "description": "api to get patterns for basic knitting projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node ./src/index.js"
+  },
+  "author": "dsteim",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^6.12.6",
+    "fastify": "^3.8.0",
+    "fastify-cors": "^4.1.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "json-schema-test": "^2.0.0",
+    "mocha": "^8.2.1",
+    "sinon": "^9.2.1"
+  }
+}

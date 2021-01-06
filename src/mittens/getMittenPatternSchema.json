@@ -1,0 +1,71 @@
+{
+  "id": "getMittenPattern",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "swatch": {
+          "type": "object",
+          "properties": {
+            "stitchesPerInch": {
+              "type": "number"
+            },
+            "rowsPerInch": {
+              "type": "number"
+            }
+          }
+        },
+        "measurements": {
+          "type": "object",
+          "properties": {
+            "handCircumference": {
+              "type": "number"
+            },
+            "handLength": {
+              "type": "number"
+            },
+            "wristToThumb": {
+              "type": "number"
+            },
+            "thumbCircumference": {
+              "type": "number"
+            },
+            "thumbLength": {
+              "type": "number"
+            }
+          }
+        },
+        "ribRepeat": {
+          "type": "string",
+          "enum": [
+            "1x1",
+            "2x2"
+          ]
+        }
+      }
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "200": {
+          "type": "object",
+          "properties": {
+            "cuff": {
+              "type": "string"
+            },
+            "hand": {
+              "type": "string"
+            },
+            "top": {
+              "type": "string"
+            },
+            "thumb": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "getSockPattern",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "swatch": {
+          "type": "object",
+          "properties": {
+            "stitchesPerInch": {
+              "type": "number"
+            },
+            "rowsPerInch": {
+              "type": "number"
+            }
+          }
+        },
+        "measurements": {
+          "type": "object",
+          "properties": {
+            "footCircumference": {
+              "type": "number"
+            },
+            "footLength": {
+              "type": "number"
+            }
+          }
+        },
+        "ribRepeat": {
+          "type": "string",
+          "enum": [
+            "1x1",
+            "2x2"
+          ]
+        }
+      }
+    },
+    "response": {
+      "200": {
+        "type": "object",
+        "properties": {
+          "cuff": {
+            "type": "string"
+          },
+          "ankle": {
+            "type": "string"
+          },
+          "heel": {
+            "type": "string"
+          },
+          "heelDecreases": {
+            "type": "string"
+          },
+          "foot": {
+            "type": "string"
+          },
+          "toe": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

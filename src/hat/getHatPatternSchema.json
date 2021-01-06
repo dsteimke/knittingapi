@@ -1,0 +1,53 @@
+{
+  "id": "getHatPattern",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "swatch": {
+          "type": "object",
+          "properties": {
+            "stitchesPerInch": {
+              "type": "number"
+            },
+            "rowsPerInch": {
+              "type": "number"
+            }
+          }
+        },
+        "measurements": {
+          "type": "object",
+          "properties": {
+            "headCircumference": {
+              "type": "number"
+            }
+          }
+        },
+        "ribRepeat": {
+          "type": "string",
+          "enum": [
+              "1x1",
+              "2x2"
+          ]
+        }
+      }
+    },
+    "response": {
+      "200": {
+        "type": "object",
+        "properties": {
+          "cuff": {
+            "type": "string"
+          },
+          "head": {
+            "type": "string"
+          },
+          "crown": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
