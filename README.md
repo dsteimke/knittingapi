@@ -59,11 +59,12 @@ This pattern is a basic cuff down sock pattern. Enter the foot length and circum
 sock cuff (portion above the heel) is the same length as the foot length, minus the heel. 
 
 #### The Math
-Sock math is straightforward - you need your stitches per inch and you knit until it fits your foot. The cuff of the 
-sock (above the heel) is largely determined by personal preference, and I like my socks to be able to be folded in half
+Sock math is straightforward - you need your count of stitches per inch, multiply that by your foot circumference, and then 
+you knit until it fits your foot. The heel stitches are calculated over 1/2 of the total sock stitches, and the cuff length 
+of the sock (above the heel) is largely determined by personal preference. I like my socks to be able to be folded in half
 perfectly at the heel. Yarn is also less elastic than commercial socks so the extra fabric around the ankle helps keep
 the sock from sliding down. The sock is the knit until it's 2" less than the desired final length, then the toe is
-knit. 
+shaped by decreasing 4 times every other row, then 4 times every row.
 
 #### Example Request Body
 {
@@ -86,7 +87,8 @@ This pattern is a basic hat with ribbing at the bottom.
 
 #### The Math
 Hats are simple, needing only one measurement - the circumference of your head. That multiplied by the stitches per inch
-is the 
+is the total stitches needed for the hat, with a slight adjustment to ensure that the brim stitches work out to a multiple
+of the rib repeat.
 
 #### Example Request Body
 {
@@ -102,6 +104,23 @@ is the
 
 ### /knitting/sweater/v1
 A top down raglan sweater knit seamlessly.
+
+#### The Math
+Sweater math is the most complicated of all the patterns listed here. You've got to make sure the neck won't choke you, the back of the sweater is usually raised a little bit for warmth, and you've got two arms to worry about and in addition to all of this there's the length and circumference of your arms and torso to factor in. So here's how it all breaks down.
+
+##### Neck & Shoulders
+Even though the collar of sweaters usually have a rib repeat, that’s usually picked up and knit after the sweater is completed so we don’t have to worry too much about it here. The number of stitches cast on is related to the neck measurement; there’s some additional ease (TODO: define ease) built in so that the sweater doesn’t choke you out at the neck. The back of the neck is usually raised to be higher than the front of the neck which keeps you slightly warmer. To achieve this the number of rows per inch is used to calculate how many partial rows to knit to raise the back of the neck.
+
+
+Once these are calculated the sweater can be knit in the round with full rows. The shoulder and arm measurements are all significant here; you want the shoulder increases to complete as you’ve knit enough so the completed knitting goes down to your under arms. Once that’s done the body and the sleeves of the sweater are all separated out and knit separately.
+
+
+##### Body
+The body is just a tube - this pattern doesn’t account for any shaping. So it’s a matter of knitting until the sweater is a little shorter than the desired length, then knitting a cuff at the bottom.
+
+
+##### Sleeves
+The sleeves are picked up and knit, while slowly being tapered so you don’t end up with a strange bell shaped thing. Similar to the body the knitting is stopped just short of the desired length and a cuff is knit on the end. 
 
 #### Example Request Body
 {
@@ -122,6 +141,9 @@ A top down raglan sweater knit seamlessly.
 
 ### /knitting/mittens/v1
 A single mitten (repeat instructions for a pair) knit from the cuff up.
+
+#### The Math
+Mittens luckily are another easy one. The wrist measurement is used to calculate how large to make the cuff, and then they’re knit in a tube, with the thumb hole marked and knit later. Once the mittens cover the tips of your fingers there are decreases each round to round off the top of the mitten and close it. The thumb stitches are then picked up and knit in the round in the same manner, and decreased for a round before the stitches are closed off.
 
 #### Example Request Body
 {
